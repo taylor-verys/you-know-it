@@ -12,15 +12,11 @@ const initialState = {
     "categ_id": 3
 };
 
-export default function categories(state = initialState, action = {}) {
+export default function question(state = initialState, action = {}) {
 
     const { type, data } = action;
 
     switch (type) {
-
-        case actionTypes.ANSWER_SELECTED:
-            state.isCorrectAnswer = data.selectedAnswer === data.correctAnswer;
-            return state;
 
         default:
             return state;
