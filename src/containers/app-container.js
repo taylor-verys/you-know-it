@@ -1,14 +1,13 @@
 import React from 'react';
-import Categories from './categories-container';
-import Questions from './questions-container';
+import { CategoriesContainer, QuestionsContainer } from '../containers';
 
 export default class App {
     render() {
         return (
             <div>
                 <header>You Know It</header>
-                <Categories />
-                <Questions />
+                <CategoriesContainer />
+                <QuestionsContainer />
             </div>
         );
     }
