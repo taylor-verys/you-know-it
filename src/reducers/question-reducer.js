@@ -18,6 +18,10 @@ export default function categories(state = initialState, action = {}) {
 
     switch (type) {
 
+        case actionTypes.ANSWER_SELECTED:
+            state.isCorrectAnswer = data.selectedAnswer === data.correctAnswer;
+            return state;
+
         default:
             return state;
 
