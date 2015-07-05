@@ -4,7 +4,7 @@ var webpack = require('webpack');
 module.exports = {
     module: {
         loaders: [
-            { test: /\.jsx?$/, include: path.join(__dirname, 'src'), loaders: ['react-hot', 'babel']}
+            { test: /\.jsx?$/, include: path.join(__dirname, 'src'), loaders: ['react-hot', 'babel?stage=0']}
         ]
     },
     entry: [
