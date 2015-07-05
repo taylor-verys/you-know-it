@@ -1,3 +1,5 @@
+import actionTypes from '../constants/action-types';
+
 const initialState = [];
 
 export default function categories(state = initialState, action = {}) {
@@ -6,7 +8,7 @@ export default function categories(state = initialState, action = {}) {
 
     switch (type) {
 
-        case 'FETCH_CATEGORIES_SUCCEEDED':
+        case actionTypes.FETCH_CATEGORIES_SUCCEEDED:
             state = data;
             return state;
 

@@ -1,9 +1,10 @@
 import request from '../_config/superagent';
+import actionTypes from '../constants/action-types';
 
 export function categoriesListLoaded() {
     return dispatch => {
         dispatch({
-           type: 'REQUEST'
+           type: actionTypes.CATEGORIES_LIST_LOADED
         });
 
         return request.get('https://pareshchouhan-trivia-v1.p.mashape.com/v1/getCategoryList')
@@ -17,14 +18,14 @@ export function categoriesListLoaded() {
 
 export function fetchCategoriesFailed(data) {
     return {
-        type: 'FETCH_CATEGORIES_FAILED',
+        type: actionTypes.FETCH_CATEGORIES_FAILED,
         data
     }
 }
 
 export function fetchCategoriesSucceeded(data) {
     return {
-        type: 'FETCH_CATEGORIES_SUCCEEDED',
+        type: actionTypes.FETCH_CATEGORIES_SUCCEEDED,
         data
     }
 }
