@@ -4,11 +4,11 @@ import { CategoriesContainer, QuestionsContainer } from '../containers';
 export default class App {
     render() {
         return (
-            <div>
+            <main>
                 <header>You Know It</header>
                 <CategoriesContainer />
                 <QuestionsContainer />
-            </div>
+            </main>
         );
     }
 }
