@@ -44,7 +44,7 @@ export function categorySelected(data = {}) {
             .end(function (err, res = {}) {
                 const { body } = res;
 
-                err ? dispatch(fetchCategoriesFailed(body)) : dispatch(fetchCategoriesSucceeded(body));
+                err ? dispatch(fetchQuestionsFailed(body)) : dispatch(fetchQuestionsSucceeded(body));
             });
     }
 }
