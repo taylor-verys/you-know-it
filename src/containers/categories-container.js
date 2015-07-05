@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'redux/react';
 import CategoryList from '../components/category-list';
@@ -7,7 +7,14 @@ import * as actions from '../actions/actions';
 @connect(state => ({
     categories: state.categoriesReducer
 }))
-export default class Categories {
+export default class Categories extends Component {
+
+    componentWillMount() {
+        const { dispatch } = this.props;
+
+        dispatch(actions.categoriesListLoaded());
+    }
+
     render() {
         const { categories, dispatch } = this.props;
 

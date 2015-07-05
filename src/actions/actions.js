@@ -1,6 +1,6 @@
 import request from '../_config/superagent';
 
-export function requestedCategories() {
+export function categoriesListLoaded() {
     return dispatch => {
         dispatch({
            type: 'REQUEST'
