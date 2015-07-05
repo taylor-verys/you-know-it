@@ -7,6 +7,8 @@ import * as reducers from './reducers';
 const redux = createRedux(reducers);
 
 React.render(
-    <App />,
+    <Provider redux={redux}>
+        {() => <App />}
+    </Provider>,
     document.getElementById('root')
 );

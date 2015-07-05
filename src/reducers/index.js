@@ -1,1 +1,1 @@
-export { default as CategoriesReducer } from './categories-reducer';
+export { default as categoriesReducer } from './categories-reducer';
