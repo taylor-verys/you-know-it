@@ -18,6 +18,10 @@ export default function question(state = initialState, action = {}) {
 
     switch (type) {
 
+        case actionTypes.FETCH_QUESTIONS_SUCCEEDED:
+            state = data[0];
+            return state;
+
         default:
             return state;
 

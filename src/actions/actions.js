@@ -69,3 +69,21 @@ export function answerSelected(data) {
         data
     }
 }
+
+export function newQuestionRequested(data) {
+    const { categoryId } = data;
+
+    return dispatch => {
+        dispatch({
+            type: actionTypes.NEW_QUESTION_REQUESTED,
+            data
+        });
+
+        return request.get(`https://pareshchouhan-trivia-v1.p.mashape.com/v1/getQuizQuestionsByCategory?categoryId=${categoryId}&limit=1&page=1`)
+            .end(function (err, res = {}) {
+                const { body } = res;
+
+                err ? dispatch(fetchQuestionsFailed(body)) : dispatch(fetchQuestionsSucceeded(body));
+            });
+    }
+}

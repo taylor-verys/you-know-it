@@ -17,7 +17,7 @@ export default class Questions extends Component {
         return (
             <section>
                 <Question question={question} {...bindActionCreators(actions, dispatch)} />
-                <Answer isShown={answer.answered} isCorrect={answer.correct} {...bindActionCreators(actions, dispatch)} />
+                <Answer question={question} isShown={answer.answered} isCorrect={answer.correct} {...bindActionCreators(actions, dispatch)} />
             </section>
         )
     }

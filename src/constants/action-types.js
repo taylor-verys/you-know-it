@@ -10,6 +10,8 @@ export default keymirror({
     FETCH_QUESTIONS_SUCCEEDED: null,
     FETCH_QUESTIONS_FAILED: null,
 
-    ANSWER_SELECTED: null
+    ANSWER_SELECTED: null,
+
+    NEW_QUESTION_REQUESTED: null
 
 })
