@@ -1,6 +1,8 @@
 import actionTypes from '../constants/action-types';
 
-const initialState = [];
+const initialState = [
+    {id: 0, categ_name: 'Default Category'}
+];
 
 export default function categories(state = initialState, action = {}) {
 

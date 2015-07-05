@@ -8,7 +8,7 @@ export function categoriesListLoaded() {
         });
 
         return request.get('https://pareshchouhan-trivia-v1.p.mashape.com/v1/getCategoryList')
-            .end(function (err, res) {
+            .end(function (err, res = {}) {
                 const { body } = res;
 
                 err ? dispatch(fetchCategoriesFailed(body)) : dispatch(fetchCategoriesSucceeded(body));
@@ -26,6 +26,13 @@ export function fetchCategoriesFailed(data) {
 export function fetchCategoriesSucceeded(data) {
     return {
         type: actionTypes.FETCH_CATEGORIES_SUCCEEDED,
+        data
+    }
+}
+
+export function categorySelected(data) {
+    return {
+        type: actionTypes.CATEGORY_SELECTED,
         data
     }
 }
