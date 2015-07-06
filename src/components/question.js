@@ -1,5 +1,18 @@
 import React, { Component } from 'react';
+import Radium from 'radium';
 
+const styles = {
+    base: {
+        width: '100%',
+        left: 0,
+        bottom: 0,
+        overflow: 'auto',
+        float: 'left',
+        maxWidth: `${980 * 0.75}px`
+    }
+};
+
+@Radium
 export default class Question extends Component {
 
     handleAnswerClick(answerId) {
@@ -21,7 +34,7 @@ export default class Question extends Component {
         const { question } = this.props;
 
         return (
-            <section>
+            <section style={[styles.base]}>
                 <header>{question.q_text}</header>
                 <ol>
                     <li onClick={this.handleAnswerClick.bind(this, 1)}>{question.q_options_1}</li>

@@ -17,6 +17,12 @@ export default function answer(state = initialState, action = {}) {
                 correct: data.selectedAnswer === data.correctAnswer
             };
 
+        case actionTypes.NEW_QUESTION_REQUESTED:
+            return {
+                answered: false,
+                correct: false
+            };
+
         default:
             return state;
 
