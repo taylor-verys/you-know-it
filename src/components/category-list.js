@@ -9,9 +9,17 @@ const styles = {
         left: 0,
         bottom: 0,
         overflow: 'auto',
-        float: 'left',
         boxSizing: 'border-box',
-        margin: 0
+        margin: 0,
+        listStyle: 'none'
+    },
+
+    category: {
+        padding: '5px 2px',
+        cursor: 'pointer',
+        ':hover': {
+            background: '#ccc'
+        }
     }
 };
 
@@ -30,7 +38,11 @@ export default class CategoryList extends Component {
         return (
             <ul style={[styles.base]}>
                 { categories.map((category) => (
-                    <li key={category.id} onClick={this.handleCategoryClick.bind(this, category)}>
+                    <li
+                        key={category.id}
+                        onClick={this.handleCategoryClick.bind(this, category)}
+                        style={[styles.category]}
+                    >
                         {category.categ_name}
                     </li>
                 ))}

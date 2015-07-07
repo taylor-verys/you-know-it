@@ -1,6 +1,15 @@
 import request from '../_config/superagent';
 import actionTypes from '../constants/action-types';
 
+function fetchQuestion(err, res={}, dispatch) {
+    const { body } = res;
+    const invalidResponse = err || !body.length;
+
+    invalidResponse
+        ? dispatch(fetchQuestionsFailed(body))
+        : dispatch(fetchQuestionsSucceeded(body));
+}
+
 export function categoriesListLoaded(data) {
     return dispatch => {
         dispatch({
@@ -41,11 +50,7 @@ export function categorySelected(data = {}) {
         });
 
         return request.get(`https://pareshchouhan-trivia-v1.p.mashape.com/v1/getQuizQuestionsByCategory?categoryId=${categoryId}&limit=1&page=1`)
-            .end(function (err, res = {}) {
-                const { body } = res;
-
-                err ? dispatch(fetchQuestionsFailed(body)) : dispatch(fetchQuestionsSucceeded(body));
-            });
+            .end((err, res) => fetchQuestion(err, res, dispatch));
     }
 }
 
@@ -80,10 +85,6 @@ export function newQuestionRequested(data) {
         });
 
         return request.get(`https://pareshchouhan-trivia-v1.p.mashape.com/v1/getQuizQuestionsByCategory?categoryId=${categoryId}&limit=1&page=1`)
-            .end(function (err, res = {}) {
-                const { body } = res;
-
-                err ? dispatch(fetchQuestionsFailed(body)) : dispatch(fetchQuestionsSucceeded(body));
-            });
+            .end((err, res) => fetchQuestion(err, res, dispatch));
     }
 }

@@ -7,8 +7,8 @@ const styles = {
         left: 0,
         bottom: 0,
         overflow: 'auto',
-        float: 'left',
-        maxWidth: `${980 * 0.75}px`
+        maxWidth: `300px`,
+        display: 'inline-block'
     }
 };
 

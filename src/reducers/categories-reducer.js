@@ -11,7 +11,7 @@ export default function categories(state = initialState, action = {}) {
     switch (type) {
 
         case actionTypes.FETCH_CATEGORIES_SUCCEEDED:
-            state = data;
+            state = data.slice(0, 10);
             return state;
 
         default:
