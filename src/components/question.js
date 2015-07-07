@@ -3,14 +3,16 @@ import Radium from 'radium';
 
 const styles = {
     base: {
-        width: '100%',
-        left: 0,
-        bottom: 0,
-        overflow: 'auto',
-        maxWidth: `300px`,
-        display: 'inline-block'
+        padding: '5px 2px'
+    },
+
+    choice: {
+        cursor: 'pointer',
+        ':hover': {
+            background: '#ccc'
+        }
     }
-};
+}
 
 @Radium
 export default class Question extends Component {
@@ -37,10 +39,10 @@ export default class Question extends Component {
             <section style={[styles.base]}>
                 <header>{question.q_text}</header>
                 <ol>
-                    <li onClick={this.handleAnswerClick.bind(this, 1)}>{question.q_options_1}</li>
-                    <li onClick={this.handleAnswerClick.bind(this, 2)}>{question.q_options_2}</li>
-                    <li onClick={this.handleAnswerClick.bind(this, 3)}>{question.q_options_3}</li>
-                    <li onClick={this.handleAnswerClick.bind(this, 4)}>{question.q_options_4}</li>
+                    <li ref="choiceOne" style={[styles.choice]} onClick={this.handleAnswerClick.bind(this, 1)}>{question.q_options_1}</li>
+                    <li ref="choiceTwo" style={[styles.choice]} onClick={this.handleAnswerClick.bind(this, 2)}>{question.q_options_2}</li>
+                    <li ref="choiceThree" style={[styles.choice]} onClick={this.handleAnswerClick.bind(this, 3)}>{question.q_options_3}</li>
+                    <li ref="choiceFour" style={[styles.choice]} onClick={this.handleAnswerClick.bind(this, 4)}>{question.q_options_4}</li>
                 </ol>
             </section>
         );

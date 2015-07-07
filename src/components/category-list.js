@@ -11,7 +11,8 @@ const styles = {
         overflow: 'auto',
         boxSizing: 'border-box',
         margin: 0,
-        listStyle: 'none'
+        listStyle: 'none',
+        display: 'inline-block'
     },
 
     category: {
