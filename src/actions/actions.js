@@ -23,21 +23,21 @@ export function categoriesListLoaded(data) {
 
                 err ? dispatch(fetchCategoriesFailed(body)) : dispatch(fetchCategoriesSucceeded(body));
             });
-    }
+    };
 }
 
 export function fetchCategoriesFailed(data) {
     return {
         type: actionTypes.FETCH_CATEGORIES_FAILED,
         data
-    }
+    };
 }
 
 export function fetchCategoriesSucceeded(data) {
     return {
         type: actionTypes.FETCH_CATEGORIES_SUCCEEDED,
         data
-    }
+    };
 }
 
 export function categorySelected(data = {}) {
@@ -51,28 +51,28 @@ export function categorySelected(data = {}) {
 
         return request.get(`https://pareshchouhan-trivia-v1.p.mashape.com/v1/getQuizQuestionsByCategory?categoryId=${categoryId}&limit=1&page=1`)
             .end((err, res) => fetchQuestion(err, res, dispatch));
-    }
+    };
 }
 
 export function fetchQuestionsSucceeded(data) {
     return {
         type: actionTypes.FETCH_QUESTIONS_SUCCEEDED,
         data
-    }
+    };
 }
 
 export function fetchQuestionsFailed(data) {
     return {
         type: actionTypes.FETCH_QUESTIONS_FAILED,
         data
-    }
+    };
 }
 
 export function answerSelected(data) {
     return {
         type: actionTypes.ANSWER_SELECTED,
         data
-    }
+    };
 }
 
 export function newQuestionRequested(data) {
@@ -86,5 +86,5 @@ export function newQuestionRequested(data) {
 
         return request.get(`https://pareshchouhan-trivia-v1.p.mashape.com/v1/getQuizQuestionsByCategory?categoryId=${categoryId}&limit=1&page=1`)
             .end((err, res) => fetchQuestion(err, res, dispatch));
-    }
+    };
 }
