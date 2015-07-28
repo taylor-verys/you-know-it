@@ -14,8 +14,9 @@ const styles = {
         overflow: 'auto',
         maxWidth: `300px`,
         display: 'inline-block',
-        verticalAlign: 'top'
-    }
+        verticalAlign: 'top',
+        paddingLeft: '20px',
+    },
 };
 
 @connect(state => ({

@@ -12,7 +12,7 @@ const styles = {
             background: '#ccc'
         }
     }
-}
+};
 
 @Radium
 export default class Question extends Component {

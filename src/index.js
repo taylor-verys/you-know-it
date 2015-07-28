@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import App from './containers/app-container';
 import * as reducers from './reducers';
 
+import './assets/style.scss';
+
 function loggerMiddleware(next) {
     return next => action => {
         console.log(action);
