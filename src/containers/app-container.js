@@ -6,14 +6,20 @@ const styles = {
     base: {
         width: '50%',
         minWidth: '980px',
-        margin: 'auto'
+        margin: 'auto',
     },
 
     header: {
         width: '100%',
         height: '50px',
-        lineHeight: '36px'
-    }
+        lineHeight: '50px',
+        padding: '0 15px',
+        background: '#eee',
+    },
+
+    content: {
+        padding: '15px 0',
+    },
 };
 
 @Radium
@@ -22,8 +28,11 @@ export default class App {
         return (
             <main style={[styles.base]}>
                 <header style={[styles.header]}>You Know It</header>
-                <CategoriesContainer />
-                <QuestionsContainer />
+
+                <section style={[styles.content]}>
+                    <CategoriesContainer />
+                    <QuestionsContainer />
+                </section>
             </main>
         );
     }

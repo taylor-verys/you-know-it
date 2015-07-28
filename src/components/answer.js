@@ -14,7 +14,7 @@ export default class Answer extends Component {
         return (
             <div style={ isShown ? {display: 'inline-block'} : {display: 'none'} }>
                 { isCorrect ? 'Correct' : 'Incorrect' }
-                <button onClick={this.handleNewQuestionClick.bind(this, categoryId)}>New Question</button>
+                <button style={ { display: 'block' } } onClick={this.handleNewQuestionClick.bind(this, categoryId)}>New Question</button>
             </div>
         );
     }

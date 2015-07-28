@@ -1,26 +1,25 @@
 import React from 'react';
-import { createDispatcher, createRedux, composeStores } from 'redux';
-import thunkMiddleware from 'redux/lib/middleware/thunk';
-import { Provider } from 'redux/react';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import { Provider } from 'react-redux';
 import App from './containers/app-container';
 import * as reducers from './reducers';
 
+import './assets/style.scss';
+
 function loggerMiddleware(next) {
-    return action => {
+    return next => action => {
         console.log(action);
         next(action);
     }
 }
 
-const dispatcher = createDispatcher(
-    composeStores(reducers),
-    getState => [ thunkMiddleware(getState), loggerMiddleware ]
-);
-
-const redux = createRedux(dispatcher);
+const reducer = combineReducers(reducers);
+const finalCreateStore = applyMiddleware(thunkMiddleware, loggerMiddleware)(createStore);
+const store = finalCreateStore(reducer, {});
 
 React.render(
-    <Provider redux={redux}>
+    <Provider store={store}>
         {() => <App />}
     </Provider>,
     document.getElementById('root')

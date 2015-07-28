@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
-import { connect } from 'redux/react';
+import { connect } from 'react-redux';
 import Radium from 'radium';
 import Question from '../components/question';
 import Answer from '../components/answer';
@@ -14,8 +14,9 @@ const styles = {
         overflow: 'auto',
         maxWidth: `300px`,
         display: 'inline-block',
-        verticalAlign: 'top'
-    }
+        verticalAlign: 'top',
+        paddingLeft: '20px',
+    },
 };
 
 @connect(state => ({
