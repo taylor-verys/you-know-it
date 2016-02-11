@@ -1,3 +1,7 @@
+# Deprecated
+
+This project was an experiment with early versions of Redux and does not represent current best practices. I don't have any intention of updating it but I'm keeping it around for reference.
+
 You Know It
 ===========
 
